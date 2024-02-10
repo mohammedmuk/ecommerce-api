@@ -14,10 +14,13 @@ Authentication is implemented using JWT (JSON Web Tokens).
 
 ## Installation
  Activate virtualenv from .venv directory
+ 
     ```
     .venv/Scripts/
-    ./activate.bat
     ```
+    ```
+     ./activate.bat
+     ````
 
 ## Endpoints
 - `/api/products/` (GET)
