@@ -21,13 +21,14 @@ Authentication is implemented using JWT (JSON Web Tokens).
 ## Endpoints
 - `/api/products/` (GET)
 - `/api/products/1` (GET)
+- `/api/items/` (POST - authentication required)
+- `/api/items/1` (GET, PATCH - authentication required)
 - `/api/customers/` (GET, POST - authentication required)
-- `/api/customers/1/` (PATCH - authentication required)
+- `/api/customers/1/` (GET, PATCH - authentication required)
 - `/api/orders/` (GET, POST - authentication required)
-- `/api/orders/1/` (DELETE - authentication required)
+- `/api/orders/1/` (DELETE, PATCH - authentication required)
 - `/api/info/` (GET, POST - authentication required)
 - `/api/info/1` (GET, PATCH - authentication required)
-- `/api/completed/` (GET, POST - authentication required)
 - `/api/token/` (POST - to generate a token)
 - `/auth/users/` (POST, GET - to create a new user)
 
