@@ -10,7 +10,10 @@ class ProductsSerializer(serializers.ModelSerializer):
 
 
 class ItemSerializer(serializers.ModelSerializer):
-    item = ProductsSerializer
+    item = serializers.HyperlinkedRelatedField(
+        view_name='api:item-detail',
+        queryset=models.Products.objects.all()
+    )
     total_number = serializers.SerializerMethodField()
     class Meta:
         model = models.Item
@@ -28,7 +31,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class CustomersSerializer(serializers.ModelSerializer):
-    owner = UserSerializer
+    owner = serializers.StringRelatedField()
     order = serializers.SerializerMethodField()
     total_price = serializers.SerializerMethodField()
 
