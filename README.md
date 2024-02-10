@@ -1,7 +1,8 @@
-# Candle eCommerce Website and API
+# eCommerce API System
 
 ## Overview
-This project is an eCommerce website that sells candles. It includes a Django backend for the API built with Django Rest Framework (DRF). The frontend utilizes HTML, CSS, and JavaScript to fetch data from the API and render it on the web pages. Authentication is implemented using JWT (JSON Web Tokens).
+This project is an eCommerce api that sells candles. It includes a Django backend for the API built with Django Rest Framework (DRF). 
+Authentication is implemented using JWT (JSON Web Tokens).
 
 ## Features
 - View products
@@ -12,19 +13,10 @@ This project is an eCommerce website that sells candles. It includes a Django ba
 - Mark orders as completed
 
 ## Installation
-1. Download and install Python version 3.11 on your machine.
-2. Navigate to the project directory.
-3. Run the following command to install dependencies:
+ Activate virtualenv from .venv directory
     ```
-    pip install -r requirements.txt
-    ```
-4. Activate the virtual environment:
-    ```
-    pipenv shell
-    ```
-5. Start the Django server:
-    ```
-    python manage.py runserver
+    .venv/Scripts/
+    ./activate.bat
     ```
 
 ## Endpoints
