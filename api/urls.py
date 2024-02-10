@@ -5,7 +5,7 @@ app_name = 'api'
 
 urlpatterns = [
     path('products/', views.Products.as_view({'get' : 'list'}), name='products'),
-    path('products/<int:pk>', views.Products.as_view({'get' : 'retrieve'})),
+    path('products/<int:pk>', views.Products.as_view({'get' : 'retrieve'}), name='item-detail'),
     path('items/', views.Item.as_view({'post' : 'create'})),
     path('items/<int:pk>', views.Item.as_view({'get' : 'retrieve', 'patch' : 'partial_update'})),
     path('customers/', views.Customers.as_view({'get' : 'list', 'post' : 'create'})),
