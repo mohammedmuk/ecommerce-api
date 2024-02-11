@@ -17,6 +17,10 @@ Authentication is implemented using JWT (JSON Web Tokens).
 ```
     pip install -r requirements.txt
 ```
+ Make a run server
+```
+    python manage.py runserver
+```
 
 ## Endpoints
 - `/api/products/` (GET)
