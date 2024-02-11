@@ -13,10 +13,10 @@ Authentication is implemented using JWT (JSON Web Tokens).
 - Mark orders as completed
 
 ## Installation
- Activate virtualenv from .venv directory
-
- - ` .venv/Scripts/`
- - `./activate.bat`
+ Install requirements.txt file
+```
+    pip install -r requirements.txt
+```
 
 ## Endpoints
 - `/api/products/` (GET)
