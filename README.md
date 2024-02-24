@@ -21,6 +21,11 @@ Authentication is implemented using JWT (JSON Web Tokens).
 ```
     python manage.py runserver
 ```
+## API Documentaion
+- You can show all endpoints by:
+```
+    http://127.0.0.1:8000/api/swagger
+```
 
 ## Endpoints
 - `/api/products/` (GET)
