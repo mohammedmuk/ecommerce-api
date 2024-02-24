@@ -1,17 +1,34 @@
-from django.urls import path
-from . import views
+from django.urls import path, include
+from django.urls import re_path
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Ecommerce System API",
+      default_version='v1',
+      description="This is full CRUD ecommerce application",
+      terms_of_service="https://www.google.com/policies/terms/",
+      contact=openapi.Contact(email="contact@snippets.local"),
+      license=openapi.License(name="BSD License"),
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
+
+
 
 app_name = 'api'
 
+
 urlpatterns = [
-    path('products/', views.Products.as_view({'get' : 'list'}), name='products'),
-    path('products/<int:pk>', views.Products.as_view({'get' : 'retrieve'}), name='item-detail'),
-    path('items/', views.Item.as_view({'post' : 'create'})),
-    path('items/<int:pk>', views.Item.as_view({'get' : 'retrieve', 'patch' : 'partial_update'})),
-    path('customers/', views.Customers.as_view({'get' : 'list', 'post' : 'create'})),
-    path('customers/<int:pk>/', views.Customers.as_view({'patch' : 'partial_update', 'get' : 'retrieve'})),
-    path('orders/', views.Orders.as_view({'get' : 'list', 'post' : 'create'})),
-    path('orders/<int:pk>', views.Orders.as_view({'delete' : 'destroy', 'patch' : 'partial_update'})),
-    path('info/', views.Info.as_view({'get' : 'list', 'post' : 'create'})),
-    path('info/<int:pk>', views.Info.as_view({'get' : 'retrieve', 'patch' : 'partial_update'})),
+    path('products/', include('products.urls')),
+    path('items/', include('items.urls')),
+    path('customers/', include('customers.urls')),
+    path('orders/', include('orders.urls')),
+    path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
