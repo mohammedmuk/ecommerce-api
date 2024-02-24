@@ -6,3 +6,4 @@ pipenv==2023.9.8
 virtualenv==20.24.3
 django-extensions==3.2.3
 django-filter==23.2
+drf-yasg
